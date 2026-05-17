@@ -1,6 +1,5 @@
 const http = require('http');
 
-// 5 categorías (requisito)
 const categories = [
   { id: 1, name: 'Electrónicos' },
   { id: 2, name: 'Ropa' },
@@ -9,7 +8,6 @@ const categories = [
   { id: 5, name: 'Libros' }
 ];
 
-// 12 productos (requisito)
 let products = [
   { id: 1, name: 'Laptop Gaming', price: 1200, description: 'Laptop de alta gama para gaming', stock: 10, categoryId: 1, imageUrl: 'https://picsum.photos/id/0/300/200' },
   { id: 2, name: 'Smartphone', price: 800, description: 'Teléfono inteligente última generación', stock: 15, categoryId: 1, imageUrl: 'https://picsum.photos/id/1/300/200' },
@@ -39,15 +37,14 @@ const server = http.createServer((req, res) => {
   
   const url = req.url;
   
-  // GET /api/products
   if (url === '/api/products' && req.method === 'GET') {
     res.end(JSON.stringify(products));
   }
-  // GET /api/categories
+
   else if (url === '/api/categories' && req.method === 'GET') {
     res.end(JSON.stringify(categories));
   }
-  // GET /api/products/:id
+
   else if (url.match(/\/api\/products\/\d+/) && req.method === 'GET') {
     const id = parseInt(url.split('/')[3]);
     const product = products.find(p => p.id === id);
@@ -58,7 +55,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify({ error: 'Producto no encontrado' }));
     }
   }
-  // POST /api/products
+
   else if (url === '/api/products' && req.method === 'POST') {
     let body = '';
     req.on('data', chunk => body += chunk);
@@ -70,7 +67,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify(newProduct));
     });
   }
-  // PUT /api/products/:id
+
   else if (url.match(/\/api\/products\/\d+/) && req.method === 'PUT') {
     const id = parseInt(url.split('/')[3]);
     let body = '';
@@ -86,7 +83,7 @@ const server = http.createServer((req, res) => {
       }
     });
   }
-  // DELETE /api/products/:id
+
   else if (url.match(/\/api\/products\/\d+/) && req.method === 'DELETE') {
     const id = parseInt(url.split('/')[3]);
     const index = products.findIndex(p => p.id === id);
@@ -106,6 +103,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000, () => {
-  console.log('✅ Servidor con 12 productos y 5 categorías');
-  console.log('📦 http://localhost:3000/api/products');
+  console.log(' Servidor con 12 productos y 5 categorías');
+  console.log(' http://localhost:3000/api/products');
 });
