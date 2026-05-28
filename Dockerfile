@@ -1,4 +1,4 @@
-﻿FROM node:18-alpine
+﻿FROM node:18.17.0-alpine
 
 WORKDIR /app
 
@@ -7,6 +7,6 @@ RUN npm install
 
 COPY backend/ ./
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["node", "server.js"]
