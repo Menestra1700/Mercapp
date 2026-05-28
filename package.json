@@ -1,7 +1,0 @@
-﻿{
-  "name": "mercapp",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  }
-}
