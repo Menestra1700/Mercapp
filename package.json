@@ -1,7 +1,7 @@
 ﻿{
   "name": "mercapp",
+  "main": "index.js",
   "scripts": {
-    "start": "cd backend && node server.js"
-  },
-  "main": "backend/server.js"
+    "start": "node index.js"
+  }
 }
