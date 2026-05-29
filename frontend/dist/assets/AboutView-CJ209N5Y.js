@@ -1,0 +1,1 @@
+import{_ as r}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{g as o,d as l,a as e}from"./index-yD-7-1xb.js";const a={};function t(c,n){return o(),l("div",null,[...n[0]||(n[0]=[e("h2",null,"Acerca de",-1),e("p",null,"MercApp - Tienda Online",-1),e("p",null,"Desarrollado con Vue 3",-1)])])}const p=r(a,[["render",t]]);export{p as default};

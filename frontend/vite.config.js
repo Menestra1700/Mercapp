@@ -3,11 +3,14 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
+  define: {
+    'import.meta.env.VITE_API_URL': JSON.stringify('https://mercapp-api-e0a7.onrender.com')
+  },
   server: {
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://mercapp-api-e0a7.onrender.com',
         changeOrigin: true
       }
     }
