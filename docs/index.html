@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MercApp - Micrositio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+        h1 { color: #667eea; }
+        h2 { color: #333; border-bottom: 2px solid #667eea; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #667eea; color: white; }
+        .url { background: #e0e0e0; padding: 10px; border-radius: 5px; word-break: break-all; }
+        a { color: #667eea; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MercApp - Micrositio del Proyecto</h1>
+        <p><strong>Estudiante:</strong> Enrique Guerrero</p>
+        <p><strong>Curso:</strong> Aplicaciones Web</p>
+        <p><strong>Universidad:</strong> Universidad Politécnica Salesiana</p>
+        <p><strong>Fecha:</strong> Mayo 2026</p>
+
+        <h2>Arquitectura de Despliegue</h2>
+        <p>El proyecto consta de tres componentes principales desplegados en la nube:</p>
+        <ul>
+            <li><strong>Base de datos:</strong> MongoDB Atlas (cluster gratuito M0 en región Sao Paulo)</li>
+            <li><strong>Backend API:</strong> Render.com (servicio gratuito con Node.js)</li>
+            <li><strong>Frontend:</strong> Netlify (SPA con Vue 3)</li>
+        </ul>
+
+        <h2>Enlaces de Acceso</h2>
+        <p><strong>Frontend (Netlify):</strong> <a href="https://taupe-tanuki-3cd1bb.netlify.app" target="_blank">https://taupe-tanuki-3cd1bb.netlify.app</a></p>
+        <p><strong>Backend API (Render):</strong> <a href="https://mercapp-api-e0a7.onrender.com" target="_blank">https://mercapp-api-e0a7.onrender.com</a></p>
+
+        <h2>Guía de Ejecución Local</h2>
+        <h3>Requisitos:</h3>
+        <ul>
+            <li>Node.js (versión 18 o superior)</li>
+            <li>npm</li>
+            <li>MongoDB Atlas o local</li>
+        </ul>
+
+        <h3>Pasos:</h3>
+        <ol>
+            <li>Clonar repositorio: <code>git clone https://github.com/Menestra1700/Mercapp.git</code></li>
+            <li>Instalar backend: <code>cd backend && npm install</code></li>
+            <li>Configurar variables de entorno en archivo <code>.env</code></li>
+            <li>Ejecutar backend: <code>node server.js</code></li>
+            <li>Instalar frontend: <code>cd frontend && npm install</code></li>
+            <li>Ejecutar frontend: <code>npm run dev</code></li>
+            <li>Abrir navegador en <code>http://localhost:5173</code></li>
+        </ol>
+
+        <h2>Endpoints de la API</h2>
+        <table>
+            <thead>
+                <tr><th>Método</th><th>Ruta</th><th>Descripción</th><th>Ejemplo Respuesta</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>GET</td><td>/api/products</td><td>Listar productos</td><td>[{"id":1,"name":"Laptop Gaming","price":1200}]</td></tr>
+                <tr><td>GET</td><td>/api/products/:id</td><td>Obtener producto</td><td>{"id":1,"name":"Laptop Gaming","price":1200}</td></tr>
+                <tr><td>POST</td><td>/api/products</td><td>Crear producto</td><td>{"id":13,"name":"Nuevo","price":100}</td></tr>
+                <tr><td>PUT</td><td>/api/products/:id</td><td>Actualizar producto</td><td>{"id":1,"name":"Actualizado","price":1500}</td></tr>
+                <tr><td>DELETE</td><td>/api/products/:id</td><td>Eliminar producto</td><td>204 No Content</td></tr>
+                <tr><td>GET</td><td>/api/categories</td><td>Listar categorías</td><td>[{"id":1,"name":"Electrónicos"}]</td></tr>
+                <tr><td>GET</td><td>/health</td><td>Estado del servicio</td><td>{"status":"ok","mongodb":true}</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Tecnologías Utilizadas</h2>
+        <ul>
+            <li><strong>Frontend:</strong> Vue 3, Vue Router, Vite, Netlify</li>
+            <li><strong>Backend:</strong> Node.js, Express, MongoDB, Render</li>
+            <li><strong>Base de Datos:</strong> MongoDB Atlas</li>
+        </ul>
+
+        <h2>Nota sobre el Despliegue</h2>
+        <p>El backend fue desplegado en <strong>Render</strong> en lugar de Railway debido a errores persistentes con el builder de Railway (npm not found). La funcionalidad es equivalente y la API está completamente operativa.</p>
+
+        <hr>
+        <p><strong>Trabajo completado - Aplicaciones Web - Universidad Politécnica Salesiana</strong></p>
+    </div>
+</body>
+</html>
